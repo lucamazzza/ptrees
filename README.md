@@ -1,2 +1,2 @@
 # ptrees
-Store `C`/`C++` pointers in binary trees
+Store pointers in binary trees
