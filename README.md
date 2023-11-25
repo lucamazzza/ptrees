@@ -22,8 +22,8 @@ ptrees is a `C`/`C++` library that provides a fast and dynamic way to store poin
 
 
 ## Credits
-BData is written and mantained by [Luca Mazza](https://mazluc.ch)
+ptrees is written and mantained by [Luca Mazza](https://mazluc.ch)
 
 ## License
-BData is released under the MIT License.
+ptrees is released under the MIT License.
 See [License](LICENSE) for details.
