@@ -1,6 +1,7 @@
 #include "ptrees.h"
 
 #include <iostream>
+using namespace std;
 
 int main() {
     // Sample data
@@ -8,45 +9,15 @@ int main() {
     int b = 3;
     int c = 7;
 
-    // Creating and inserting nodes with int* data
-    Node<int>* rootInt = nullptr;
-    rootInt = insert(rootInt, &a);
-    rootInt = insert(rootInt, &b);
-    rootInt = insert(rootInt, &c);
+    PTree<int> intPtrs;
+    intPtrs.insert(&a);
+    intPtrs.insert(&b);
+    intPtrs.insert(&c);
 
-    // Searching for a node
-    int* searchDataInt = &b;
-    Node<int>* resultInt = search(rootInt, searchDataInt);
+    int* interestingPtr = &b;
 
-    if (resultInt != nullptr) {
-        std::cout << "Node with data " << *(resultInt->data) << " found." << std::endl;
-    } else {
-        std::cout << "Node not found." << std::endl;
-    }
+    PTree<int>::Node* result = intPtrs.search(interestingPtr);
 
-    // Destroying the tree
-    destroyTree(rootInt);
-
-    // Another sample with double* data
-    double x = 3.14;
-    double y = 1.23;
-    double z = 5.67;
-
-    Node<double>* rootDouble = nullptr;
-    rootDouble = insert(rootDouble, &x);
-    rootDouble = insert(rootDouble, &y);
-    rootDouble = insert(rootDouble, &z);
-
-    double* searchDataDouble = &y;
-    Node<double>* resultDouble = search(rootDouble, searchDataDouble);
-
-    if (resultDouble != nullptr) {
-        std::cout << "Node with data " << *(resultDouble->data) << " found." << std::endl;
-    } else {
-        std::cout << "Node not found." << std::endl;
-    }
-
-    destroyTree(rootDouble);
-
+    std::cout << "Pointer containing " << *(result->data) << " found at " << (result->data) << std::endl;
     return 0;
 }
