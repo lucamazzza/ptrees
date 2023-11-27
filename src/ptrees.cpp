@@ -4,20 +4,23 @@
 using namespace std;
 
 int main() {
-    // Sample data
-    int a = 5;
-    int b = 3;
-    int c = 7;
+    PTree<int> intTree;
 
-    PTree<int> intPtrs;
-    intPtrs.insert(&a);
-    intPtrs.insert(&b);
-    intPtrs.insert(&c);
+    intTree.insert(new int(50));
+    intTree.insert(new int(30));
+    intTree.insert(new int(70));
+    intTree.insert(new int(20));
+    intTree.insert(new int(40));
+    intTree.insert(new int(60));
+    intTree.insert(new int(80));
 
-    int* interestingPtr = &b;
+    int fif = 50;
 
-    PTree<int>::Node* result = intPtrs.search(interestingPtr);
+    PTree<int>::Node* result = intTree.search(&fif);
 
-    std::cout << "Pointer containing " << *(result->data) << " found at " << (result->data) << std::endl;
+    std::cout << "Found " << *(result->data) << " @" << result->data << std::endl << std::endl;
+
+    intTree.values(false);
+
     return 0;
 }

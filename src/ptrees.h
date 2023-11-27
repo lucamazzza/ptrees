@@ -1,6 +1,10 @@
 #ifndef PTREES_H
 #define PTREES_H
+
 #include <iostream>
+#include <vector>
+#include <iomanip>
+
 
 template <typename T>
 class PTree {
@@ -60,6 +64,29 @@ private:
         }
     }
 
+    // Function to print the tree showing the values contained
+    void print(const std::string& prefix, const Node* node, bool isLeft, bool showAddress)
+    {
+        if( node != nullptr )
+        {
+            std::cout << prefix;
+
+            std::cout << (isLeft ? "├──" : "└──" );
+
+            // print the value of the node
+            std::cout << *(node->data);
+            if (showAddress) {
+                std::cout <<  " (" << (node->data) << ")";
+            }
+            std::cout << std::endl;
+
+            // enter the next tree level - left and right branch
+            print( prefix + (isLeft ? "│   " : "    "), node->left, true, showAddress);
+            print( prefix + (isLeft ? "│   " : "    "), node->right, false, showAddress);
+        }
+    }
+
+
 public:
     // Constructor
     PTree() : root(nullptr) {}
@@ -77,6 +104,10 @@ public:
     // Public method to search for data in the tree
     Node* search(T* data) {
         return search(root, data);
+    }
+
+    void values(bool showAddress){
+        print("", root, false, showAddress);
     }
 };
 
