@@ -1,7 +1,6 @@
 #include "ptrees.h"
 
 #include <iostream>
-using namespace std;
 
 int main() {
     PTree<int> intTree;
@@ -18,7 +17,7 @@ int main() {
 
     PTree<int>::Node* result = intTree.search(&fif);
 
-    std::cout << "Found " << *(result->data) << " @" << result->data << std::endl << std::endl;
+    std::cout << *(result->data) << " |-> @" << result->data << std::endl << std::endl;
 
     intTree.values(false);
 
