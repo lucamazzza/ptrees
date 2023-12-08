@@ -21,5 +21,9 @@ int main() {
 
     intTree.values(false);
 
+    intTree.remove(&fif);
+
+    intTree.values(false);
+
     return 0;
 }

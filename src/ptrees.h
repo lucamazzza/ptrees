@@ -9,7 +9,6 @@
 template <typename T>
 class PTree {
 public:
-    // Define a generic Node class using templates
     struct Node {
         T* data;
         Node* left;
@@ -53,6 +52,40 @@ private:
         } else {
             return search(current->right, data);
         }
+    }
+
+    Node* findMin(Node* node) const {
+        while (node->left != nullptr) {
+            node = node->left;
+        }
+        return node;
+    }
+
+    Node* removeNode(Node* node, T* value) {
+        if (node == nullptr) {
+            return node;
+        }
+
+        if (*value < *(node->data)) {
+            node->left = removeNode(node->left, value);
+        } else if (*value > *(node->data)) {
+            node->right = removeNode(node->right, value);
+        } else {
+            if (node->left == nullptr) {
+                Node* temp = node->right;
+                delete node;
+                return temp;
+            } else if (node->right == nullptr) {
+                Node* temp = node->left;
+                delete node;
+                return temp;
+            }
+
+            Node* temp = findMin(node->right);
+            node->data = temp->data;
+            node->right = removeNode(node->right, temp->data);
+        }
+        return node;
     }
 
     // Function to destroy the binary tree and free memory
@@ -104,6 +137,10 @@ public:
     // Public method to search for data in the tree
     Node* search(T* data) {
         return search(root, data);
+    }
+
+    void remove(T* value) {
+        root = removeNode(root, value);
     }
 
     void values(bool showAddress){
