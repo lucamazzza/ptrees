@@ -3,6 +3,7 @@ project(ptrees)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(ptrees SHARED src/ptrees.cpp
-        src/ptrees.h
-        src/ptrees.cpp)
+add_library(ptrees SHARED src/PTree.cpp
+        src/PTree.h
+        src/PTree.cpp
+)
