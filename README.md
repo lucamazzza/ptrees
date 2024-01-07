@@ -1,9 +1,9 @@
 # ptrees
 
-[![GitHub release](https://img.shields.io/github/v/release/lucamazzza/ptrees?color=green&label=latest%20release&sort=semver)](https://github.com/lucamazzza/ptrees/releases/latest)
-[![JDK Version](https://img.shields.io/badge/C%2B%2B-17-blue.svg?logo=cplusplus)](https://en.cppreference.com/w/cpp/17)
-[![License](https://img.shields.io/badge/License-MIT-purple)](LICENSE)
-[![Discord Badge](https://img.shields.io/discord/1119987238202261664?color=5865F2&label=&logo=discord&logoColor=white)](https://discord.gg/B3yXwmHb2V)
+[![GitHub release](https://img.shields.io/github/v/release/lucamazzza/ptrees?color=green&label=latest%20release&sort=semver&style=for-the-badge)](https://github.com/lucamazzza/ptrees/releases/latest)
+[![JDK Version](https://img.shields.io/badge/C%2B%2B-17-blue.svg?logo=cplusplus&style=for-the-badge)](https://en.cppreference.com/w/cpp/17)
+[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
+[![Discord Badge](https://img.shields.io/discord/1119987238202261664?color=5865F2&label=&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/B3yXwmHb2V)
 
 ptrees is a `C`/`C++` library that provides a fast and dynamic way to store pointers in binary trees.
 
